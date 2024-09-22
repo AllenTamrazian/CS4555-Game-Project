@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 142034, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalPosition.x
@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84b9a779117374bc7ad04daf9158fdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  supportKnight: {fileID: 1889382977}
-  defensiveKnight: {fileID: 1832354162}
+  speed: 25
+  rotateSpeed: 180
 --- !u!4 &709959991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
@@ -617,7 +617,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -0.087723}
-  m_LocalScale: {x: 3.425913, y: 10, z: 2.2615635}
+  m_LocalScale: {x: 50, y: 10, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -636,19 +636,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 142034, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 440288, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -713,8 +713,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &1832354164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -766,8 +766,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &1889382979
 Rigidbody:
   m_ObjectHideFlags: 0
