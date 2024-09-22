@@ -7,11 +7,13 @@ public class TankKnight : MonoBehaviour
     public int speed = 25;
     public int rotateSpeed = 180;
     private Animator animator;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -43,9 +45,15 @@ public class TankKnight : MonoBehaviour
             transform.Rotate(transform.up * rotateSpeed * Time.deltaTime);
             animator.SetBool("isMoving", true);
         }
-        if (Input.GetKey(KeyCode.U))
+        if (Input.GetKey(KeyCode.U) & rb.velocity.magnitude == 0)
         {
             print("attack");
+            animator.SetBool("attackingIdle", true);
+        }
+        if (Input.GetKeyUp(KeyCode.U) & rb.velocity.magnitude == 0)
+        {
+            print("not attacking idle");
+            animator.SetBool("attackingIdle", false);
         }
         if (Input.GetKey(KeyCode.O))
         {
