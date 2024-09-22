@@ -8,11 +8,12 @@ public class StrategistKnight : MonoBehaviour
     //public GameObject defensiveKnight;
     public int speed = 25;
     public int rotateSpeed = 180;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,22 +24,26 @@ public class StrategistKnight : MonoBehaviour
             print("w key is held down");
             transform.position +=
             transform.forward * speed * Time.deltaTime;
+            animator.SetBool("isMoving", true);
         }
         if (Input.GetKey(KeyCode.S))
         {
             print("s key is held down");
             transform.position +=
             -transform.forward * speed * Time.deltaTime;
+            animator.SetBool("isMoving", true);
         }
         if (Input.GetKey(KeyCode.A))
         {
             print("a key is held down");
             transform.Rotate(transform.up * -rotateSpeed * Time.deltaTime);
+            animator.SetBool("isMoving", true);
         }
         if (Input.GetKey(KeyCode.D))
         {
             print("d key is held down");
             transform.Rotate(transform.up * rotateSpeed * Time.deltaTime);
+            animator.SetBool("isMoving", true);
         }
         if (Input.GetKey(KeyCode.Q))
         {
@@ -47,6 +52,10 @@ public class StrategistKnight : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             print("special ability");
+        }
+        if (!Input.anyKey)
+        {
+            animator.SetBool("isMoving", false);
         }
 
         //supportKnight.transform.position = transform.position - transform.right * 3;
