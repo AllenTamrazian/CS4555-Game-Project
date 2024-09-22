@@ -38,5 +38,13 @@ public class TankKnight : MonoBehaviour
             print("l key is held down");
             transform.Rotate(transform.up * rotateSpeed * Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.U))
+        {
+            print("attack");
+        }
+        if (Input.GetKey(KeyCode.O))
+        {
+            print("special ability");
+        }
     }
 }

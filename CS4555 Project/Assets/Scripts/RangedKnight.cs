@@ -38,5 +38,13 @@ public class RangedKnight : MonoBehaviour
             print("h key is held down");
             transform.Rotate(transform.up * rotateSpeed * Time.deltaTime);
         }
+        if(Input.GetKey(KeyCode.R))
+        {
+            print("attack");
+        }
+        if (Input.GetKey(KeyCode.Y))
+        {
+            print("special ability");
+        }
     }
 }

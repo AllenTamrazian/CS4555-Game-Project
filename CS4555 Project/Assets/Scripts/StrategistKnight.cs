@@ -40,6 +40,14 @@ public class StrategistKnight : MonoBehaviour
             print("d key is held down");
             transform.Rotate(transform.up * rotateSpeed * Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            print("attack");
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            print("special ability");
+        }
 
         //supportKnight.transform.position = transform.position - transform.right * 3;
         //supportKnight.transform.rotation = Quaternion.Slerp(supportKnight.transform.rotation, transform.rotation, Time.deltaTime * 5);
