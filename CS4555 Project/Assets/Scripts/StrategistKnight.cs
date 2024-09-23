@@ -10,12 +10,31 @@ public class StrategistKnight : MonoBehaviour
     public int rotateSpeed = 180;
     private Animator animator;
     private Rigidbody rb;
+    Transform swordOnBelt;
+    Transform swordInHand;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        swordOnBelt = FindDeepChild(transform, "Item_SwordSheath");
+        swordInHand = FindDeepChild(transform, "swordInHand");
+    }
+
+    Transform FindDeepChild(Transform parent, string name)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == name)
+                return child;
+
+            // Recursively search in this child's children
+            Transform result = FindDeepChild(child, name);
+            if (result != null)
+                return result;
+        }
+        return null;  // Return null if not found
     }
 
     // Update is called once per frame
@@ -50,10 +69,14 @@ public class StrategistKnight : MonoBehaviour
         if (Input.GetKey(KeyCode.Q) & rb.velocity.magnitude == 0)
         {
             print("attack");
+            swordOnBelt.gameObject.SetActive(false);
+            swordInHand.gameObject.SetActive(true);
             animator.SetBool("attackingIdle", true);
         }
         if (Input.GetKeyUp(KeyCode.Q) & rb.velocity.magnitude == 0)
         {
+            swordOnBelt.gameObject.SetActive(true);
+            swordInHand.gameObject.SetActive(false);
             print("not attacking idle");
             animator.SetBool("attackingIdle", false);
         }
