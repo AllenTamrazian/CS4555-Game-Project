@@ -116,9 +116,8 @@ public class RangedKnight : MonoBehaviour
             animator.SetBool("Special attack", false);
             swordInHand.gameObject.SetActive(true);
         }
-
             // Stop movement animation if no keys are pressed
-            if (!Input.anyKey)
+        if (!Input.anyKey)
         {
             animator.SetBool("isMoving", false);
         }
