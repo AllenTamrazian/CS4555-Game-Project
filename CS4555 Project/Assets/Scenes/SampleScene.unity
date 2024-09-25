@@ -508,7 +508,7 @@ PrefabInstance:
     - target: {fileID: 9588702, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ede7a05e5a7ac41379382fea7aa8ce6e, type: 2}
+      objectReference: {fileID: 9100000, guid: e51a786de5e8b41b0ace786c8b1ce380, type: 2}
     - target: {fileID: 1128950176847922661, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_Constraints
       value: 80
@@ -951,7 +951,7 @@ PrefabInstance:
     - target: {fileID: 9588702, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ede7a05e5a7ac41379382fea7aa8ce6e, type: 2}
+      objectReference: {fileID: 9100000, guid: 357edf00099254756a0956cec76b5eba, type: 2}
     - target: {fileID: 2526364357185689302, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: m_Name
       value: Long Camera
@@ -970,6 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1130077857065743413, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
+    - {fileID: 3299969698670379236, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 441074, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
@@ -1056,6 +1057,7 @@ MonoBehaviour:
   gravityMultiplier: 3
   groundCheckDistance: 1.1
   downwardForce: 5
+  health: 100
 --- !u!1 &1844412428
 GameObject:
   m_ObjectHideFlags: 0

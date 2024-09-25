@@ -90,7 +90,7 @@ public class StrategistKnight : MonoBehaviour
         animator.SetBool("isMoving", isMoving);
 
         // Sword attack (check if idle)
-        if (Input.GetKey(KeyCode.R) && rb.velocity.magnitude == 0)
+        if (Input.GetKey(KeyCode.Q) && rb.velocity.magnitude == 0)
         {
             swordOnBelt.gameObject.SetActive(false);
             swordInHand.gameObject.SetActive(true);
@@ -98,7 +98,7 @@ public class StrategistKnight : MonoBehaviour
         }
 
         // Stop attack when releasing the key
-        if (Input.GetKeyUp(KeyCode.R) && rb.velocity.magnitude == 0)
+        if (Input.GetKeyUp(KeyCode.Q) && rb.velocity.magnitude == 0)
         {
             swordOnBelt.gameObject.SetActive(true);
             swordInHand.gameObject.SetActive(false);
@@ -106,10 +106,17 @@ public class StrategistKnight : MonoBehaviour
         }
 
         // Special ability
-        if (Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.E) && rb.velocity.magnitude == 0)
         {
-            print("special ability");
+            animator.SetBool("specialAbility", true);
+            swordInHand.gameObject.SetActive(false);
         }
+        if (Input.GetKeyUp(KeyCode.E) && rb.velocity.magnitude == 0)
+        {
+            animator.SetBool("specialAbility", false);
+            swordInHand.gameObject.SetActive(true);
+        }
+
 
         // Stop movement animation if no keys are pressed
         if (!Input.anyKey)

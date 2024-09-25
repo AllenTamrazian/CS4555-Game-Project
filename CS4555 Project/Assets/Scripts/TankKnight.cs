@@ -90,7 +90,7 @@ public class TankKnight : MonoBehaviour
         animator.SetBool("isMoving", isMoving);
 
         // Sword attack (check if idle)
-        if (Input.GetKey(KeyCode.R) && rb.velocity.magnitude == 0)
+        if (Input.GetKey(KeyCode.U) && rb.velocity.magnitude == 0)
         {
             swordOnBelt.gameObject.SetActive(false);
             swordInHand.gameObject.SetActive(true);
@@ -98,7 +98,7 @@ public class TankKnight : MonoBehaviour
         }
 
         // Stop attack when releasing the key
-        if (Input.GetKeyUp(KeyCode.R) && rb.velocity.magnitude == 0)
+        if (Input.GetKeyUp(KeyCode.U) && rb.velocity.magnitude == 0)
         {
             swordOnBelt.gameObject.SetActive(true);
             swordInHand.gameObject.SetActive(false);
@@ -106,9 +106,13 @@ public class TankKnight : MonoBehaviour
         }
 
         // Special ability
-        if (Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.O) && rb.velocity.magnitude == 0)
         {
-            print("special ability");
+            animator.SetBool("specialattack", true);
+        }
+        if (Input.GetKeyUp(KeyCode.O) && rb.velocity.magnitude == 0)
+        {
+            animator.SetBool("specialattack", false);
         }
 
         // Stop movement animation if no keys are pressed

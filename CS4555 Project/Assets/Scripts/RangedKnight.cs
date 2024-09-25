@@ -106,13 +106,19 @@ public class RangedKnight : MonoBehaviour
         }
 
         // Special ability
-        if (Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.Y) && rb.velocity.magnitude == 0)
         {
-            print("special ability");
+            animator.SetBool("Special attack", true);
+            swordInHand.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyUp(KeyCode.Y) && rb.velocity.magnitude == 0)
+        {
+            animator.SetBool("Special attack", false);
+            swordInHand.gameObject.SetActive(true);
         }
 
-        // Stop movement animation if no keys are pressed
-        if (!Input.anyKey)
+            // Stop movement animation if no keys are pressed
+            if (!Input.anyKey)
         {
             animator.SetBool("isMoving", false);
         }
