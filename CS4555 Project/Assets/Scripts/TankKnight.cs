@@ -14,6 +14,8 @@ public class TankKnight : MonoBehaviour
     Transform swordOnBelt;
     Transform swordInHand;
     private bool isGrounded;
+    public int health = 100;
+    private BoxCollider boxCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class TankKnight : MonoBehaviour
         rb.drag = 0f;  // Ensure drag is set to 0 for no air resistance
         swordOnBelt = FindDeepChild(transform, "Item_SwordSheath");
         swordInHand = FindDeepChild(transform, "swordInHand");
+        boxCollider = GetComponent<BoxCollider>();
     }
 
     Transform FindDeepChild(Transform parent, string name)
@@ -112,6 +115,15 @@ public class TankKnight : MonoBehaviour
         if (!Input.anyKey)
         {
             animator.SetBool("isMoving", false);
+        }
+        animator.SetInteger("Health", health);
+        if (health <= 0)
+        {
+            boxCollider.size = new Vector3(1.0f, 1f, 1.0f);
+        }
+        if (health > 0)
+        {
+            boxCollider.size = new Vector3(1.0f, 2.0f, 1.0f);
         }
     }
 
