@@ -55,6 +55,13 @@ public class RangedKnight : MonoBehaviour
             isMoving = true;
         }
 
+        //sprint
+        if (Input.GetKey(KeyCode.B))
+        {
+            moveDirection = transform.forward * speed * 2;
+            isMoving = true;
+        }
+
         // Move backward
         if (Input.GetKey(KeyCode.G))
         {

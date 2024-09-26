@@ -691,11 +691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1130077857065743413, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: speed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1130077857065743413, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: rotateSpeed
-      value: 180
+      value: 135
       objectReference: {fileID: 0}
     - target: {fileID: 1130077857065743413, guid: b81ba67e44b1b174d9ef4491f146ee35, type: 3}
       propertyPath: swordOnBelt
@@ -1450,8 +1450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1adfe7ca7714b8eae04f43d8699d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  rotateSpeed: 180
+  speed: 5
+  rotateSpeed: 135
   gravityMultiplier: 3
   groundCheckDistance: 1.1
   downwardForce: 5
@@ -1647,8 +1647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b201beb6512754ad3954c6a45b1285af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  rotateSpeed: 180
+  speed: 5
+  rotateSpeed: 135
   gravityMultiplier: 3
   groundCheckDistance: 1.1
   downwardForce: 5

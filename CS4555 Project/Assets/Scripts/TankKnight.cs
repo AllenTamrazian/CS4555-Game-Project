@@ -55,6 +55,13 @@ public class TankKnight : MonoBehaviour
             isMoving = true;
         }
 
+        //sprint
+        if (Input.GetKey(KeyCode.M))
+        {
+            moveDirection = transform.forward * speed * 2;
+            isMoving = true;
+        }
+
         // Move backward
         if (Input.GetKey(KeyCode.K))
         {
