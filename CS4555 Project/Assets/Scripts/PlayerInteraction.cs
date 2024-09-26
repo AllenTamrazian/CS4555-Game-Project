@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     public List<Transform> npcList;
+    public List<Transform> objectList;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,21 +15,18 @@ public class PlayerInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //for npc in npcList:
-        //    if (Vector3.Distance(transform.position, npc) < 2)
-        //    {
-        //        print("interacting with npc");
-        //    }
-        if (Input.GetKeyDown(KeyCode.R))
+        for (int i = 0; i < npcList.Capacity; i += 1)
         {
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverLapSphere(transform.position, interactRange);
-            foreach (Collider collider in colliderArray)
+            if (Vector3.Distance(transform.position, npcList[i].transform.position) < 2 & (Input.GetKey(KeyCode.U) | Input.GetKey(KeyCode.R) | Input.GetKey(KeyCode.Q)))
             {
-                if (collider.TryGetComponent(out NPCInteractable npcInteractable))
-                {
-                    npcInteractable.Interact();
-                }
+                print("interacting with npc");
+            }
+        }
+        for (int i = 0; i < objectList.Capacity; i += 1)
+        {
+            if (Vector3.Distance(transform.position, objectList[i].transform.position) < 2 & (Input.GetKey(KeyCode.U) | Input.GetKey(KeyCode.R) | Input.GetKey(KeyCode.Q)))
+            {
+                print("interacting with object");
             }
         }
     }

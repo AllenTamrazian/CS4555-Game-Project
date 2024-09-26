@@ -108,11 +108,13 @@ public class TankKnight : MonoBehaviour
         // Special ability
         if (Input.GetKey(KeyCode.O) && rb.velocity.magnitude == 0)
         {
-            animator.SetBool("specialattack", true);
+            print("special attack for tank knight");
+            //animator.SetBool("specialattack", true);
         }
         if (Input.GetKeyUp(KeyCode.O) && rb.velocity.magnitude == 0)
         {
-            animator.SetBool("specialattack", false);
+            print("turn off special attack for tank knight");
+            //animator.SetBool("specialattack", false);
         }
 
         // Stop movement animation if no keys are pressed
